@@ -1,4 +1,6 @@
 from PIL import Image, ImageOps
+import cv2
+import numpy as np
 
 filename = "wanda.png"
 
@@ -80,3 +82,16 @@ img5.show();
 # Convert RGB image into Black And White
 img6 = img6.convert('1')
 img6.show();
+
+#Addition of 2 images
+img7 = cv2.imread('pinuhuhuuhhuh1.png')
+img8 = cv2.imread('wanda1.png')
+dst = cv2.addWeighted(img7, 0.5, img8, 0.7, 0)
+
+img_arr = np.hstack((img7, img8))
+cv2.imshow('Input Images',img_arr)
+cv2.imshow('Blended Image',dst)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
