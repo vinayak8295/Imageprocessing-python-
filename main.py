@@ -32,8 +32,12 @@
 # Code for IP software starts here:
 
 # importing necessary packages
+# PIL(Python Imaging Library) is a free and open-source additional library for the Python programming language
+# that adds support for opening, manipulating, and saving many different image file formats.
 from PIL import Image, ImageOps
 import cv2
+# NumPy is a Python library used for working with arrays.
+# It also has functions for working in domain of linear algebra, fourier transform, and matrices.
 import numpy as np
 
 # inputing file path
@@ -51,7 +55,7 @@ img6 = Image.open(filename)
 # rotating at certain angle
 rotation_angle = input("Input angle of rotation: ")
 rotation_angle = int(rotation_angle)
-img = img0.rotate(angle=rotation_angle,expand=True,fillcolor="green")
+img0 = img0.rotate(angle=rotation_angle, expand=True, fillcolor="green")
 img0.show()
 
 # resizing at some width & height
@@ -59,7 +63,7 @@ resize_width = input("Input width (in %): ")
 resize_width = float(resize_width)
 resize_height = input("Input height (in %): ")
 resize_height = float(resize_height)
-img1 = img1.resize((int(img1.width*resize_width),int(img1.height*resize_height)))
+img1 = img1.resize((int(img1.width * resize_width), int(img1.height * resize_height)))
 img1.show()
 
 # croping using intial coordinates & length of sides of image
@@ -89,11 +93,11 @@ for i in range(0, img5.size[0] - 1):
         pixelColorVals = img5.getpixel((i, j));
 
         # inverting color
-        redPixel = 255 - pixelColorVals[0];     # negate red pixel
+        redPixel = 255 - pixelColorVals[0];  # negate red pixel
 
-        greenPixel = 255 - pixelColorVals[1];   # negate green pixel
+        greenPixel = 255 - pixelColorVals[1];  # negate green pixel
 
-        bluePixel = 255 - pixelColorVals[2];    # negate blue pixel
+        bluePixel = 255 - pixelColorVals[2];  # negate blue pixel
 
         # modifying the image with the inverted pixel values
         img5.putpixel((i, j), (redPixel, greenPixel, bluePixel));
@@ -110,8 +114,8 @@ img7 = cv2.imread('pinuhuhuuhhuh1.png')
 img8 = cv2.imread('wanda1.png')
 dst = cv2.addWeighted(img7, 0.5, img8, 0.7, 0)
 img_arr = np.hstack((img7, img8))
-cv2.imshow('Input Images',img_arr)
-cv2.imshow('Blended Image',dst)
+cv2.imshow('Input Images', img_arr)
+cv2.imshow('Blended Image', dst)
 
 # end of program
 cv2.waitKey(0)
