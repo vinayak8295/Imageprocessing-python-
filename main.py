@@ -11,6 +11,8 @@
     Problem Statement: 
     Image processing project in which user can input any
     image file type and manipulate with that.
+    
+    Technology Used: Python
 
     Features:
     1)Colour image into a grayscale image (black & white image)
@@ -24,8 +26,6 @@
     9)Change detection (Compute the difference of two images)
     10)Compute the negative of an image
     11)Can extract text from the image
-
-    Technology Used: Python
 --------------------------------------------------------------
 """
 
